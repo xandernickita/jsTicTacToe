@@ -1,0 +1,144 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    color: goldenrod;
+    font-style: italic;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    cursor: pointer;
+    position: relative;
+}
+
+.tile {
+    color: currentColor;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-border {
+    border-right: 0.2em outset goldenrod;
+}
+
+.bottom-border {
+    border-bottom: 0.2em outset indianred;
+}
+
+.strike {
+    position: absolute;
+    background-color: darkred;
+}
+
+.strike-row-1 {
+    width: 100%;
+    height: 4px;
+    top: 15%;
+}
+.strike-row-2 {
+    width: 100%;
+    height: 4px;
+    top: 48%;
+}
+.strike-row-3 {
+    width: 100%;
+    height: 4px;
+    top: 83%;
+}
+.strike-column-1 {
+    height: 100%;
+    width: 4px;
+    left: 15%;
+}
+.strike-column-2 {
+    height: 100%;
+    width: 4px;
+    left: 49%;
+}
+.strike-column-3 {
+    height: 100%;
+    width: 4px;
+    left: 83%;
+}
+.strike-diagonal-1 {
+    width: 90%;
+    height: 4px;
+    top: 50%;
+    left: 5%;
+    transform: skewY(45deg);
+}
+.strike-diagonal-2 {
+    width: 90%;
+    height: 4px;
+    top: 50%;
+    left: 5%;
+    transform: skewY(-45deg);
+}
+
+h1 {
+    color: goldenrod;
+}
+
+/* shoutout to my HTML5 prof. for these animations :D */
+    .animate {
+    animation-name: movingText;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes movingText {
+    from {margin-left: -20%;}
+    to {margin-left: 20%;}
+}
+
+#game-over-area {
+    text-align: center;
+    border: 5px outset indianred;
+    padding: 50px;
+    width: 50%;
+    margin-top: 50px;
+}
+
+h2 {
+    color: goldenrod;
+    font-size: 2em;
+    margin-top: 0px;
+}
+
+button {
+    background-color: transparent;
+    color: goldenrod;
+    border: indianred 2px outset;
+    padding: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.pvp {
+    cursor: pointer;
+    border: 2px outset indianred;
+    font-weight: bold;
+}
+#timer {
+    color: indianred;
+    align-items: center;
+    display: inline-flex;
+    font-weight: bold;
+    font-size: larger;
+}
